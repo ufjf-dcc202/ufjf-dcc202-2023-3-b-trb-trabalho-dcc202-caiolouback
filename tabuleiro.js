@@ -1,9 +1,9 @@
 let jogador = [ [" ", " ", " "],
-                [" ", 5, " "],
+                [" ", " ", " "],
                 [" ", " ", " "] ];
 
 let computador = [ [" ", " ", " "],
-                    [" ", 6, " "],
+                    [" ", " ", " "],
                     [" ", " ", " "] ];
 
 function getValorJogador(lin, col) {
