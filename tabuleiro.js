@@ -25,13 +25,14 @@ function getPontosComputador() {
   return pontosComputador;
 }
 
+function aleatorizaNum(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 function jogaDado() {
-  let min, max;
-  let resultado;
-  min = Math.ceil(1);
-  max = Math.floor(6);
-  resultado = Math.floor(Math.random() * (max - min + 1)) + min;
-  return resultado;
+  return aleatorizaNum(1, 6);
 }
 
 function calculaPontosColuna(mat, col) {
@@ -39,10 +40,10 @@ function calculaPontosColuna(mat, col) {
   for(let i=0; i<3; i++) {
     somaPontosColuna += mat[i][col];
   }
-  if(mat[0][col] === mat[1][col] && mat[0][col] === mat[2][col]) {
+  if(mat[0][col] === mat[1][col] && mat[0][col] === mat[2][col] && mat[0][col] !== " ") {
     multiplicador = 3;
   }
-  else if(mat[0][col] === mat[1][col] || mat[0][col] === mat[2][col] || mat[1][col] === mat[2][col]) {
+  else if((mat[0][col] === mat[1][col] && mat[0][col] !== " ") || (mat[0][col] === mat[2][col] && mat[0][col] !== " ") || (mat[1][col] === mat[2][col] && mat[1][col] !== " ")) {
       multiplicador = 2;
     }
   somaPontosColuna = somaPontosColuna * multiplicador;
@@ -53,6 +54,45 @@ function calculaPontos(matriz) {
   let somaPontos = 0;
   somaPontos = calculaPontosColuna(matriz, 0) + calculaPontosColuna(matriz, 1) + calculaPontosColuna(matriz, 2);
   return somaPontos;
+}
+
+function atualizaPontos() {
+  pontosJogador = calculaPontos(jogador);
+  pontosComputador = calculaPontos(computador);
+}
+
+let iJogador = 0, jJogador = 0, kJogador = 0;
+
+function escreveNaTabelaJogador(numDado, coluna) {
+  if(coluna === 0) {
+    jogador[iJogador][coluna] = numDado;
+    iJogador++;
+  }
+  if(coluna === 1) {
+    jogador[jJogador][coluna] = numDado;
+    jJogador++;
+  }
+  if(coluna === 2) {
+    jogador[kJogador][coluna] = numDado;
+    kJogador++;
+  }
+}
+
+let iComputador = 0, jComputador = 0, kComputador = 0;
+
+function escreveNaTabelaComputador(numDado, coluna) {
+  if(coluna === 0) {
+    computador[iComputador][coluna] = numDado;
+    iComputador++;
+  }
+  if(coluna === 1) {
+    computador[jComputador][coluna] = numDado;
+    jComputador++;
+  }
+  if(coluna === 2) {
+    computador[kComputador][coluna] = numDado;
+    kComputador++;
+  }
 }
 
 function verificaFimDeJogo() {
@@ -78,4 +118,4 @@ function verificaFimDeJogo() {
   return tabuleiroCompleto;
 }
 
-export { getJogador, getComputador, getPontosJogador, getPontosComputador, jogaDado, calculaPontosColuna, calculaPontos, verificaFimDeJogo };
+export { getJogador, getComputador, getPontosJogador, getPontosComputador, aleatorizaNum, jogaDado, atualizaPontos, escreveNaTabelaJogador, escreveNaTabelaComputador, verificaFimDeJogo };

@@ -1,32 +1,44 @@
-import { getJogador, getComputador, getPontosJogador, getPontosComputador, jogaDado, calculaPontosColuna, calculaPontos, verificaFimDeJogo } from "./tabuleiro.js";
+import { getJogador, getComputador, getPontosJogador, getPontosComputador, aleatorizaNum, jogaDado, atualizaPontos, escreveNaTabelaJogador, escreveNaTabelaComputador, verificaFimDeJogo } from "./tabuleiro.js";
 
 const btnIniciaJogo = document.querySelector("#iniciaJogo");
 
-let jog = getJogador(); //matriz jogador
-let comp = getComputador(); //matriz computador
 let jogPontos = getPontosJogador();
 let compPontos = getPontosComputador();
 
 btnIniciaJogo.addEventListener('click', iniciarJogo);
 
-console.log(verificaFimDeJogo());
+function atualizaTela() {
+  let jog = getJogador(); //matriz jogador
+  let comp = getComputador(); //matriz computador
+  //escreve matrizes na tela
+  atualizaPontos();
+  //escreve pontos na tela
+}
 
 function iniciarJogo() {
+  atualizaTela();
   for(let i=1; i<200; i++) {
     if(i%2 !== 0) {
       //vez do computador
+      let res1, col1;
+      res1 = jogaDado();
+      col1 = aleatorizaNum(0, 2);
+      // escreveNaTabelaComputador(res1, col1);
     }
+    atualizaTela();
     if(verificaFimDeJogo()) {
       break;
     }
-    //atualizaTela();
     i++;
     if(i%2 === 0) {
       //vez do Jogador
+      let res2, col2;
+      res2 = jogaDado();
     }
-    //atualizaTela();
+    atualizaTela();
     if(verificaFimDeJogo()) {
       break;
     }
   }
+  // verificaVencedor();
 }
