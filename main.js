@@ -1,4 +1,6 @@
-import { getJogador, getComputador, getPontosJogador, getPontosComputador, aleatorizaNum, jogaDado, atualizaPontos, escreveNaTabelaJogador, escreveNaTabelaComputador, verificaFimDeJogo } from "./tabuleiro.js";
+import { getJogador, getComputador, getPontosJogador, getPontosComputador, aleatorizaNum, 
+  jogaDado, atualizaPontos, escreveNaTabelaJogador, escreveNaTabelaComputador, verificaFimDeJogo, 
+  verificaCounterJogador, verificaCounterComputador } from "./tabuleiro.js";
 
 const btnIniciaJogo = document.querySelector("#iniciaJogo");
 
@@ -12,6 +14,8 @@ function atualizaTela() {
   let comp = getComputador(); //matriz computador
   //escreve matrizes na tela
   atualizaPontos();
+  jogPontos = getPontosJogador();
+  compPontos = getPontosComputador();
   //escreve pontos na tela
 }
 

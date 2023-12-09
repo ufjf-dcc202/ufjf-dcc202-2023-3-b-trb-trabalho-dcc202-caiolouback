@@ -118,4 +118,71 @@ function verificaFimDeJogo() {
   return tabuleiroCompleto;
 }
 
-export { getJogador, getComputador, getPontosJogador, getPontosComputador, aleatorizaNum, jogaDado, atualizaPontos, escreveNaTabelaJogador, escreveNaTabelaComputador, verificaFimDeJogo };
+function verificaCounterJogador(resDado, coluna) {
+  let aux = 0, contCounter = 0;
+  for(let i=0; i<3; i++) {
+    if(resDado === computador[i][coluna]) {
+      computador[i][coluna] = " ";
+      contCounter++;
+    }
+  }
+  for(let j=0; j<2; j++) {
+    if(computador[j][coluna] === " ") {
+      aux = computador[j][coluna];
+      computador[j][coluna] = computador[j+1][coluna];
+      computador[j+1][coluna] = aux;
+    }
+  }
+  for(let j=0; j<2; j++) {
+    if(computador[j][coluna] === " ") {
+      aux = computador[j][coluna];
+      computador[j][coluna] = computador[j+1][coluna];
+      computador[j+1][coluna] = aux;
+    }
+  }
+  if(contCounter === 1) {
+    iComputador = iComputador - 1;
+  }
+  if(contCounter === 2) {
+    iComputador = iComputador - 2;
+  }
+  if(contCounter === 3) {
+    iComputador = iComputador - 3;
+  }
+}
+
+function verificaCounterComputador(resDado, coluna) {
+  let aux = 0;
+  for(let i=0; i<3; i++) {
+    if(resDado === jogador[i][coluna]) {
+      jogador[i][coluna] = " ";
+    }
+  }
+  for(let j=0; j<2; j++) {
+    if(jogador[j][coluna] === " ") {
+      aux = jogador[j][coluna];
+      jogador[j][coluna] = jogador[j+1][coluna];
+      jogador[j+1][coluna] = aux;
+    }
+  }
+  for(let j=0; j<2; j++) {
+    if(jogador[j][coluna] === " ") {
+      aux = jogador[j][coluna];
+      jogador[j][coluna] = jogador[j+1][coluna];
+      jogador[j+1][coluna] = aux;
+    }
+  }
+  if(contCounter === 1) {
+    iJogador = iJogador - 1;
+  }
+  if(contCounter === 2) {
+    iJogador = iJogador - 2;
+  }
+  if(contCounter === 3) {
+    iJogador = iJogador - 3;
+  }  
+}
+
+export { getJogador, getComputador, getPontosJogador, getPontosComputador, aleatorizaNum, 
+  jogaDado, atualizaPontos, escreveNaTabelaJogador, escreveNaTabelaComputador, verificaFimDeJogo,
+   verificaCounterJogador, verificaCounterComputador };
