@@ -66,7 +66,7 @@ body {
     flex-direction: column;
 }
 .mensagem-inicia-jogo {
-    display: none;
+    display: grid;
     position: fixed;
     top: 0;
     left: 0;
@@ -104,22 +104,7 @@ body {
     padding: 10px 15px;
 }
 
-.botao-jogar-novamente {
-    font-size: 2.rem;
-    background-color: rgba(65 ,185 ,131 ,1);
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 5px;
-    border: none;
-    margin-top: 16px;
-    color: white;
-}
 .botao-inicia-jogo:hover {
-    color: rgba(65 ,185 ,131 ,1);
-    background-color: white;
-}
-
-.botao-jogar-novamente:hover {
     color: rgba(65 ,185 ,131 ,1);
     background-color: white;
 }
