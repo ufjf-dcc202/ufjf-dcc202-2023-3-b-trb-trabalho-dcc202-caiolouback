@@ -61,38 +61,12 @@ function atualizaPontos() {
   pontosComputador = calculaPontos(computador);
 }
 
-let iJogador = 0, jJogador = 0, kJogador = 0;
-
-function escreveNaTabelaJogador(numDado, coluna) {
-  if(coluna === 0) {
-    jogador[iJogador][coluna] = numDado;
-    iJogador++;
-  }
-  if(coluna === 1) {
-    jogador[jJogador][coluna] = numDado;
-    jJogador++;
-  }
-  if(coluna === 2) {
-    jogador[kJogador][coluna] = numDado;
-    kJogador++;
-  }
+function escreveNaTabelaJogador(numDado, linha, coluna) {
+    jogador[linha][coluna] = numDado;
 }
 
-let iComputador = 0, jComputador = 0, kComputador = 0;
-
-function escreveNaTabelaComputador(numDado, coluna) {
-  if(coluna === 0) {
-    computador[iComputador][coluna] = numDado;
-    iComputador++;
-  }
-  if(coluna === 1) {
-    computador[jComputador][coluna] = numDado;
-    jComputador++;
-  }
-  if(coluna === 2) {
-    computador[kComputador][coluna] = numDado;
-    kComputador++;
-  }
+function escreveNaTabelaComputador(numDado, linha, coluna) {
+    computador[linha][coluna] = numDado;
 }
 
 function verificaFimDeJogo() {
@@ -140,15 +114,6 @@ function verificaCounterJogador(resDado, coluna) {
       computador[j+1][coluna] = aux;
     }
   }
-  if(contCounter === 1) {
-    iComputador = iComputador - 1;
-  }
-  if(contCounter === 2) {
-    iComputador = iComputador - 2;
-  }
-  if(contCounter === 3) {
-    iComputador = iComputador - 3;
-  }
 }
 
 function verificaCounterComputador(resDado, coluna) {
@@ -172,17 +137,29 @@ function verificaCounterComputador(resDado, coluna) {
       jogador[j+1][coluna] = aux;
     }
   }
-  if(contCounter === 1) {
-    iJogador = iJogador - 1;
+}
+
+function contaCasasVazias(mat, coluna) {
+  let contador = 0;
+  for(let i=0; i<3; i++) {
+    if(matriz[i][coluna] === " ")
+      contador++;
   }
-  if(contCounter === 2) {
-    iJogador = iJogador - 2;
+  return contador;
+}
+
+function verificaVencedor() {
+  if(pontosComputador === pontosJogador) {
+    return 0;
   }
-  if(contCounter === 3) {
-    iJogador = iJogador - 3;
-  }  
+  else if(pontosComputador > pontosJogador) {
+    return 1;
+  }
+  else if(pontosJogador > pontosComputador) {
+    return 2;
+  }
 }
 
 export { getJogador, getComputador, getPontosJogador, getPontosComputador, aleatorizaNum, 
   jogaDado, atualizaPontos, escreveNaTabelaJogador, escreveNaTabelaComputador, verificaFimDeJogo,
-   verificaCounterJogador, verificaCounterComputador };
+   verificaCounterJogador, verificaCounterComputador, contaCasasVazias, verificaVencedor };
