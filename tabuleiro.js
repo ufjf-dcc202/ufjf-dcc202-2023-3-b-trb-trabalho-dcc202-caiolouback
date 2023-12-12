@@ -62,11 +62,21 @@ function atualizaPontos() {
 }
 
 function escreveNaTabelaJogador(numDado, linha, coluna) {
-    jogador[linha][coluna] = numDado;
+  for(let i=0; i<3; i++) {
+    if(jogador[i][coluna] === " ") {
+      jogador[i][coluna] = numDado;
+      break;
+    }
+  }
 }
 
 function escreveNaTabelaComputador(numDado, linha, coluna) {
-    computador[linha][coluna] = numDado;
+  for(let i=0; i<3; i++) {
+    if(computador[i][coluna] === " ") {
+      computador[i][coluna] = numDado;
+      break;
+    }
+  }
 }
 
 function verificaFimDeJogo() {
