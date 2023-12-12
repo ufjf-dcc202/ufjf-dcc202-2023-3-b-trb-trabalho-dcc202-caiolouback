@@ -170,6 +170,6 @@ function verificaVencedor() {
   }
 }
 
-export { getJogador, getComputador, getPontosJogador, getPontosComputador, aleatorizaNum, 
-  jogaDado, atualizaPontos, escreveNaTabelaJogador, escreveNaTabelaComputador, verificaFimDeJogo,
+export { getJogador, getComputador, getPontosJogador, getPontosComputador, jogaDado, 
+  atualizaPontos, escreveNaTabelaJogador, escreveNaTabelaComputador, verificaFimDeJogo,
    verificaCounterJogador, verificaCounterComputador, contaCasasVazias, verificaVencedor };

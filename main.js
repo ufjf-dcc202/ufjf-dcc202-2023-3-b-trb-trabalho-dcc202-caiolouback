@@ -1,8 +1,7 @@
-import { getJogador, getComputador, getPontosJogador, getPontosComputador, aleatorizaNum, 
-  jogaDado, atualizaPontos, escreveNaTabelaJogador, escreveNaTabelaComputador, verificaFimDeJogo, 
-  verificaCounterJogador, verificaCounterComputador, contaCasasVazias, 
-  verificaVencedor } from "./tabuleiro.js";
-
+import { getJogador, getComputador, getPontosJogador, getPontosComputador, jogaDado, 
+  atualizaPontos, escreveNaTabelaJogador, escreveNaTabelaComputador, verificaFimDeJogo, 
+  verificaCounterJogador, verificaCounterComputador, contaCasasVazias, verificaVencedor } from "./tabuleiro.js";
+s
 const btnIniciaJogo = document.querySelector("#iniciaJogo");
 
 let jog = getJogador(); 
