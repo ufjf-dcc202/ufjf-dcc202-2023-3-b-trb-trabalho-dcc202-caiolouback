@@ -13,6 +13,7 @@ let compPontos = getPontosComputador();
 
 // const cels1 = document.querySelectorAll(".board>.cell")
 
+const dComp = document.querySelector("#dadoComp");
 const pComp = document.querySelector("#pontosComp");
 
 const matC00 = document.querySelector("#c00");
@@ -25,9 +26,16 @@ const matC20 = document.querySelector("#c20");
 const matC21 = document.querySelector("#c21");
 const matC22 = document.querySelector("#c22");
 
+function clicaColuna0() {
+  console.log("coluna 0");
+  jogaNaColuna(0)
+}
+
+const dJog = document.querySelector("#dadoJog");
 const pJog = document.querySelector("#pontosJog");
 
 const matJ00 = document.querySelector("#j00");
+matJ00.addEventListener("click", clicaColuna0)
 const matJ01 = document.querySelector("#j01");
 const matJ02 = document.querySelector("#j02");
 const matJ10 = document.querySelector("#j10");
@@ -73,6 +81,11 @@ function preencheCasaComputador() {
   preencheCasaTabela(matC22, comp[2][2]);
 }
 
+function escreveDado(dado, resultado) {
+  dado.innerHTML = "";
+  dado.textContent = resultado;
+}
+
 function atualizaTela() {
   atualizaPontos();
   jogPontos = getPontosJogador();
@@ -96,6 +109,7 @@ function iniciarJogo() {
       let iComp, jComp, kComp;
       comp = getComputador();
       resComp = jogaDado();
+      escreveDado(dComp, resComp);
       iComp = contaCasasVazias(comp, 0);
       jComp = contaCasasVazias(comp, 1);
       kComp = contaCasasVazias(comp, 2);
@@ -119,13 +133,23 @@ function iniciarJogo() {
       //vez do Jogador
       let resJog, colJog;
       let iJog, jJog, kJog;
+      resJog = jogaDado();
+      escreveDado(dJog, resJog);
       jog = getJogador();
       iJog = contaCasasVazias(jog, 0);
       jJog = contaCasasVazias(jog, 1);
       kJog = contaCasasVazias(jog, 2);
-      resJog = jogaDado();
-      // escreveNaTabelaJogador(resJog, colJog);
-      // verificaCounterJogador(resJog, colJog);
+      if(iJog > 0) {
+
+      }
+      if(jJog > 0) {
+
+      }
+      if(kJog > 0) {
+
+      }
+      escreveNaTabelaJogador(resJog, colJog);
+      verificaCounterJogador(resJog, colJog);
     }
     atualizaTela();
     if(verificaFimDeJogo()) {
