@@ -1,10 +1,10 @@
-let jogador = [ [" ", " ", " "],
-                [" ", " ", " "],
-                [" ", " ", " "] ];
+let jogador = [ [1, 2, 3],
+                [4, 5, 6],
+                [7, 8, 9] ];
 
-let computador = [ [" ", " ", " "],
-                    [" ", " ", " "],
-                    [" ", " ", " "] ];
+let computador = [ [9, 8, 7],
+                    [6, 5, 4],
+                    [3, 2, 1] ];
 
 let pontosJogador = 0;
 let pontosComputador = 0;
