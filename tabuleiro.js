@@ -61,7 +61,7 @@ function atualizaPontos() {
   pontosComputador = calculaPontos(computador);
 }
 
-function escreveNaTabelaJogador(numDado, linha, coluna) {
+function escreveNaTabelaJogador(numDado, coluna) {
   for(let i=0; i<3; i++) {
     if(jogador[i][coluna] === " ") {
       jogador[i][coluna] = numDado;
@@ -70,7 +70,7 @@ function escreveNaTabelaJogador(numDado, linha, coluna) {
   }
 }
 
-function escreveNaTabelaComputador(numDado, linha, coluna) {
+function escreveNaTabelaComputador(numDado, coluna) {
   for(let i=0; i<3; i++) {
     if(computador[i][coluna] === " ") {
       computador[i][coluna] = numDado;
