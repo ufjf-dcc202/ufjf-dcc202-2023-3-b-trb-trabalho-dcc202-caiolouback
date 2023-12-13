@@ -10,6 +10,8 @@ let jog = getJogador();
 let comp = getComputador();
 let jogPontos = getPontosJogador();
 let compPontos = getPontosComputador();
+let resComp = 0;
+let resJog = 0;
 
 const cellsC = document.querySelectorAll(".board>.cell")
 const dadoComp = document.querySelector("#dadoComp");
@@ -20,12 +22,19 @@ const dadoJog = document.querySelector("#dadoJog");
 const pontosJog = document.querySelector("#pontosJog");
 
 const jogadorColuna0 = document.querySelector("#j00");
-jogadorColuna0.addEventListener("click", clicaColuna0)
-function clicaColuna0() {
-  jog = getJogador();
-  if((contaCasasVazias(jog, 0) > 0) && (i%2 === 0)) {
-    escreveNaTabelaJogador(resJog, 0);
-  }
+const jogadorColuna1 = document.querySelector("#j10");
+const jogadorColuna2 = document.querySelector("#j20");
+
+function clicaColuna1() {
+  escreveNaTabelaJogador(resJog, 0);
+}
+
+function clicaColuna2() {
+  escreveNaTabelaJogador(resJog, 1);
+}
+
+function clicaColuna3() {
+  escreveNaTabelaJogador(resJog, 2);
 }
 
 function preencheCasaComputador() {
@@ -71,7 +80,7 @@ function iniciarJogo() {
   while(fimDeJogo === false) {
     if(i%2 !== 0) {
       //vez do computador
-      let resComp, colComp;
+      let colComp;
       comp = getComputador();
       resComp = jogaDado();
       escreveDado(dadoComp, resComp);
@@ -93,9 +102,18 @@ function iniciarJogo() {
     i++;
     if(i%2 === 0) {
       //vez do Jogador
-      let resJog;
+      jog = getJogador();
       resJog = jogaDado();
       escreveDado(dadoJog, resJog);
+      if(contaCasasVazias(jog, 0) > 0) {
+        jogadorColuna0.addEventListener("click", clicaColuna0);
+      }
+      if(contaCasasVazias(jog, 0) > 0) {
+        jogadorColuna1.addEventListener("click", clicaColuna1);
+      }
+      if(contaCasasVazias(jog, 0) > 0) {
+        jogadorColuna2.addEventListener("click", clicaColuna2);
+      }
       verificaCounterJogador(resJog, 0);
       verificaCounterJogador(resJog, 1);
       verificaCounterJogador(resJog, 2);
