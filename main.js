@@ -11,11 +11,7 @@ let compPontos = getPontosComputador();
 
 btnIniciaJogo.addEventListener('click', iniciarJogo);
 
-var button = document.querySelector(".botao-inicia-jogo"); // botão inicia jogo 
-button.onclick = function() {  //função para botão desaparecer depois de clicar
- button.style.display = "none";
- document.querySelector('.mensagem-inicia-jogo').style.position = 'relative';
-}
+
 
 function atualizaTela() {
   jog = getJogador(); 
