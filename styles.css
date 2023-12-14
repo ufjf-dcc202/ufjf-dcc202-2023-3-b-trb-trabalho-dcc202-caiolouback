@@ -131,12 +131,15 @@ body {
 }
 .pontuacao-jogador{
     background-color:white;
+    aspect-ratio: 1;
     border: none;
     border-radius: 5px;
-    padding: 10px 15px;
+    padding: 1vh 2vh;
+    float: right;
 }
 .pontuacao-computador{
     background-color:rgb(37, 37, 37);
+    aspect-ratio: 1;
     color: white;
     border: none;
     border-radius: 5px;
@@ -146,29 +149,33 @@ body {
 .pontos {
     justify-content: center;
     text-align: center;
-    margin-top: 20px;
+    margin-top: -10vh;
 }
 
 .boxComputador {
-    background-color: rgb(41, 41, 41);
-    width: 250px;
-    height: 150px;
-    margin-top: -235px;
-    margin-left: 1220px;
+    width: 1vh;
+    aspect-ratio:0 ;
+    background-color: rgb(1, 12, 1);
+    margin-right: 18vw;
+    margin-top: -15vw;
+    font-size: 3vw;
     text-align: center;
+    padding: 8vh 18vh 10vh 10vh;
+    float: right;
     border-radius: 5px;
     border-style: solid;
-    border-color: rgb(0, 0, 0);
-    float: center;
 }
 
 .boxJogador {
-    background-color: rgb(247, 244, 248);
-    width: 250px;
-    height: 150px;
-    margin-top: -200px;
-    margin-left: 450px;
+    width: 1vh;
+    aspect-ratio:0 ;
+    background-color: rgb(244, 247, 244);
+    margin-left: 18vw;
+    margin-top: -13vw;
+    font-size: 3vw;
     text-align: center;
+    padding: 8vh 18vh 10vh 10vh;
+    float: left;
     border-radius: 5px;
     border-style: solid;
     
