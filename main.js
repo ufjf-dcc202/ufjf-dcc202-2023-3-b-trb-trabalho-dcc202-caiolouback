@@ -6,6 +6,15 @@ const btnIniciaJogo = document.querySelector("#iniciaJogo");
 
 btnIniciaJogo.addEventListener('click', iniciarJogo);
 
+// inicio do script
+var actionButton = document.querySelector('button'),
+    button = document.querySelector('.mensagem-inicia-jogo');
+
+actionButton.addEventListener('click', function() {
+  button.style.display = 'none';
+}, false);
+//Coloquei esse script para que o botão inicia jogo desapareça. 
+
 let jog = getJogador(); 
 let comp = getComputador();
 let jogPontos = getPontosJogador();
