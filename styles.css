@@ -114,50 +114,50 @@ body {
     aspect-ratio: 1;
     float: left;
     float: center;
-    margin-top: -320px;
-    margin-left: 515px; 
+    margin-top: -40vh;
+    margin-left: 45vh; 
     display: center;
 
 }
 
-.pontos-computador{
+.pontos-computador{ 
     font-size: 3vh;
     aspect-ratio: 1;
     float: right;
     float: center;
-    margin-top: -350px;
-    margin-right: 500px; 
+    margin-top: -43vh;
+    margin-right: 42vh; 
+    display: center;
 
 }
 .pontuacao-jogador{
     background-color:white;
-    aspect-ratio: 1;
     border: none;
     border-radius: 5px;
     padding: 1vh 2vh;
-    float: right;
+
 }
 .pontuacao-computador{
-    background-color:rgb(37, 37, 37);
-    aspect-ratio: 1;
+    background-color:rgb(48, 45, 45);
     color: white;
     border: none;
     border-radius: 5px;
-    padding: 10px 15px;
+    padding: 1vh 2vh;
+    
 }
-
 .pontos {
     justify-content: center;
     text-align: center;
-    margin-top: -10vh;
+    margin-top: 2vh;
+   
 }
 
 .boxComputador {
     width: 1vh;
     aspect-ratio:0 ;
-    background-color: rgb(1, 12, 1);
+    background-color: rgb(40, 43, 40);
     margin-right: 18vw;
-    margin-top: -15vw;
+    margin-top: -14.5vw;
     font-size: 3vw;
     text-align: center;
     padding: 8vh 18vh 10vh 10vh;
