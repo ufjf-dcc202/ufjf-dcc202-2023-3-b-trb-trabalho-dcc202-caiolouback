@@ -152,7 +152,7 @@ function verificaCounterComputador(resDado, coluna) {
 function contaCasasVazias(mat, coluna) {
   let contador = 0;
   for(let i=0; i<3; i++) {
-    if(matriz[i][coluna] === " ")
+    if(mat[i][coluna] === " ")
       contador++;
   }
   return contador;

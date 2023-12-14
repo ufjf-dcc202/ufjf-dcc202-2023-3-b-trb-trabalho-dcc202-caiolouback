@@ -101,6 +101,7 @@ function iniciarJogo() {
         colComp = 2;
       }
       escreveNaTabelaComputador(resComp, colComp);
+      atualizaTela();
       verificaCounterComputador(resComp, colComp);
     }
     atualizaTela();
@@ -143,5 +144,5 @@ function iniciarJogo() {
   }
   else if(vencedor === 2) {
     // jogador
-  }
+  } 
 }
