@@ -33,6 +33,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 5vh;
 }
 .board2 {
     display: grid;
@@ -74,9 +75,9 @@ body {
 }
 
 .botao-inicia-jogo {
-    font-size: 25px;
+    font-size: 5vh;
     background-color: rgba(65 ,185 ,131 ,1);
-    padding: 10px 15px;
+    padding: 1vh 2vh;
     cursor: pointer;
     border-radius: 5px;
     border: none;
@@ -154,7 +155,7 @@ body {
 
 .boxComputador {
     width: 1vh;
-    height: 1vh;
+    height: 2vh;
     aspect-ratio:0 ;
     background-color: rgb(40, 43, 40);
     margin-right: 18vw;
@@ -167,11 +168,8 @@ body {
     border-style: solid;
     
 }
-.dadoPC {
-    top: 50%;
-    left: 50%;
-    margin: -3vh  0 0 2vh;
-    color: white;
+.dadoPC p {
+    text-align: center;
 }
 
 .boxJogador {
@@ -190,8 +188,6 @@ body {
     border-style: solid;
     
 }
-.dadoJG {
-    top: 50%;
-    left: 50%;
-    margin: -3vh  0 0 2vh;
+.dadoJG p{
+    text-align: center;
 }
