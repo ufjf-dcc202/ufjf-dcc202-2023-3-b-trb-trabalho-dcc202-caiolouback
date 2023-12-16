@@ -127,7 +127,7 @@ body {
     float: right;
     float: center;
     margin-top: -43vh;
-    margin-right: 42vh; 
+    margin-right: 44vh; 
     display: center;
 
 }
@@ -136,7 +136,7 @@ body {
     border: none;
     border-radius: 5px;
     padding: 1vh 2vh;
-
+    margin-left: 2vh;
 }
 .pontuacao-computador{
     background-color:rgb(48, 45, 45);
@@ -145,25 +145,34 @@ body {
     border-radius: 5px;
     padding: 1vh 2vh;
     
+    
 }
-.pontos {
+.pontosPC {
     justify-content: center;
     text-align: center;
     margin-top: 2vh;
-   
+    margin-left: -1vh;
+}
+.pontosJ {
+    justify-content: center;
+    text-align: center;
+    margin-top: 1.5vh;
+    margin-left: 1vh;
 }
 
+
 .boxComputador {
+    background-color: rgb(53, 54, 53);
     width: 1vh;
     height: 2vh;
-    aspect-ratio:0 ;
-    background-color: rgb(40, 43, 40);
+    display: flex;
+    float: right;
+    text-align: center;
+    font-size: 4vw;
+    aspect-ratio:0;
     margin-right: 18vw;
     margin-top: -14.5vw;
-    font-size: 3vw;
-    text-align: center;
-    padding: 8vh 18vh 10vh 10vh;
-    float: right;
+    padding: 5vh 18vh 15vh 13vh;
     border-radius: 5px;
     border-style: solid;
     
@@ -173,21 +182,21 @@ body {
 }
 
 .boxJogador {
+    background-color: rgb(250, 252, 250);
     width: 1vh;
-    height: 1vh;
+    height: 2vh;
     display: flex;
-    aspect-ratio:0 ;
-    background-color: rgb(244, 247, 244);
-    margin-left: 18vw;
-    margin-top: -13vw;
-    font-size: 3vw;
-    justify-items: center;
-    padding: 8vh 18vh 10vh 10vh;
     float: left;
+    text-align: center;
+    font-size: 4vw;
+    aspect-ratio:0;
+    margin-left: 18vw;
+    margin-top: -13.5vw;
+    padding: 5vh 18vh 15vh 13vh;
     border-radius: 5px;
     border-style: solid;
-    
 }
 .dadoJG p{
     text-align: center;
+    
 }
